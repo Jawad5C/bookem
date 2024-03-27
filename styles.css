@@ -30,9 +30,8 @@ html, body {
 }
 
 .name h1 {
-    writing-mode: vertical-rl; /* Vertical writing mode, text reads from bottom to top */
-    transform: rotate(-180deg); /* Rotate the text to be upright */
-    /* align-self: center; */
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg); 
     font-size: 90px;
     box-sizing: border-box;
 }
@@ -70,11 +69,11 @@ html, body {
 .parent button {
     position: relative;
     left: 25%;
-    width: 50%; /* Ensure inputs take full width */
+    width: 50%; 
     border: none;
     border-bottom: 2px solid black;
     margin-bottom: 50px;
-    box-sizing: border-box; /* Include padding in width calculation */
+    box-sizing: border-box; 
 }
 
 .add_button {
@@ -94,26 +93,26 @@ html, body {
 }
 
 .book-entry img {
-    max-width: 75%; /* Set maximum width to ensure it fits within the container */
-    max-height: 150px;/* Set maximum height to maintain aspect rati0 */
+    max-width: 75%; 
+    max-height: 150px;
 }
 
 
 .booklist {
-    
-    height: 100vh; /* Set a fixed height */
+
+    height: 100vh;
     overflow-y: auto; /* Enable vertical scrolling */
 }
 
-/* Thin scrollbar track */
+
 .booklist::-webkit-scrollbar {
-    width: 1px; /* Set the width of the scrollbar */
+    width: 1px; 
 }
 
-/* Thin scrollbar thumb */
+
 .booklist::-webkit-scrollbar-thumb {
     background-color: black;
-    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+    border-radius: 4px; 
 }
 
 
@@ -136,3 +135,38 @@ html, body {
     font-size: 20px;
     color:black ;
 }
+
+.parent select {
+    position: relative;
+    left: 25%;
+    width: 50%;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    animation: flashing 0.5s infinite alternate; 
+}
+
+
+.stock-flash {
+    animation: flashing 1s infinite alternate;
+}
+
+@keyframes flashing {
+    0% {
+        color: blue; /* Start with blue */
+    }
+    50% {
+        color: red; /* Transition to red at 50% */
+    }
+    100% {
+        color: blue; /* Back to blue at 100% */
+    }
+}
+
+.button-pressed {
+    background-color: red;
+    color: blue; 
+}
+
+

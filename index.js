@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Retrieve stored book entries from local storage
     const storedBooks = JSON.parse(localStorage.getItem('books')) || [];
 
+    const audio = new Audio('police-siren-one-loop-loop-able-104019 copy.mp3'); // Create audio element
+
+
     // Function to display stored book entries
     function displayStoredBooks() {
         storedBooks.forEach(book => {
@@ -15,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Display stored book entries on page load
     displayStoredBooks();
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const stockText = document.getElementById('stock');
+        stockText.classList.add('stock-flash');
+    });
 
     form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
@@ -39,6 +47,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Reset the form
         form.reset();
+
+        audio.play(); // Play the audio
+
+// Add a temporary class to the button to indicate it's being pressed
+document.querySelector('.add_button').classList.add('button-pressed');
+
+// Remove the temporary class after a short delay
+setTimeout(() => {
+    document.querySelector('.add_button').classList.remove('button-pressed');
+}, 200);
+
+
 
         // Store the new book entry in local storage
         storedBooks.push(book);
